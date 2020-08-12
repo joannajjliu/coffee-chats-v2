@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+* {
+  font-family: "Roboto";
+}
+
+.addPerson--form {
+  align-items: center;
+  align-content: center;
+}
+
+.addPerson--heading {
+  display: inline-block;
+  padding-left: 10px;
+  text-align: left;
+}
+
+h1 {
+  color: #292727;
+  text-align: center;
+}
