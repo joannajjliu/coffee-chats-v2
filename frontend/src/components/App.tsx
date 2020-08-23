@@ -4,7 +4,6 @@ import AddPerson from "./AddPerson";
 import CalculatePairs from "./CalculatePairs";
 import PersonOnHold from "./PersonOnHold";
 import ShowParticipants from "./ShowParticipants";
-import HandleFiles from "./HandleFiles";
 
 import "../styles/index.css";
 
