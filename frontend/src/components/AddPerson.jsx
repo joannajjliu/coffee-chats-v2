@@ -20,13 +20,19 @@ export default function AddPerson() {
       autoComplete="off"
     >
       <h1 className="addPerson--heading">Add Person</h1>
-      <TextField id="input-first-name" label="First Name" variant="outlined" />
-      <br />
-      <TextField id="input-last-name" label="Last Name" variant="outlined" />
-      <br />
-      <Button variant="contained" type="submit">
-        Submit
-      </Button>
+      <div className="row">
+        <TextField
+          id="input-first-name"
+          label="First Name"
+          variant="outlined"
+        />
+        <br />
+        <TextField id="input-last-name" label="Last Name" variant="outlined" />
+        <br />
+        <Button variant="contained" type="submit">
+          Submit
+        </Button>
+      </div>
     </form>
   );
 }

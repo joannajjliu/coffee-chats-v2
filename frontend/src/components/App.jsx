@@ -10,10 +10,19 @@ import "../styles/index.css";
 class App extends React.PureComponent {
   render() {
     return (
-      <Container>
-        <AddPerson />
-        <CalculatePairs />
-        <PersonOnHold />
+      <Container className="container">
+        <div className="row">
+          <AddPerson />
+        </div>
+        <hr />
+        <div className="row my-4">
+          <CalculatePairs />
+        </div>
+        <hr />
+        <div className="row my-4">
+          <PersonOnHold />
+        </div>
+        <hr />
         <ShowParticipants />
       </Container>
     );

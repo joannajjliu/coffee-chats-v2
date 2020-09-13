@@ -20,11 +20,13 @@ export default function PersonOnHold() {
       autoComplete="off"
     >
       <h1 className="addPerson--heading">Place person on hold</h1>
-      <TextField id="input-email" label="email" variant="outlined" />
-      <br />
-      <Button variant="contained" type="submit">
-        Submit
-      </Button>
+      <div className="row">
+        <TextField id="input-email" label="email" variant="outlined" />
+        <br />
+        <Button variant="contained" type="submit">
+          Submit
+        </Button>
+      </div>
     </form>
   );
 }

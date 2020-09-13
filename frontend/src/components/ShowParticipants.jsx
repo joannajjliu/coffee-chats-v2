@@ -96,7 +96,7 @@ function TablePaginationActions(props) {
   );
 }
 
-function createData(id: number, name: string, surname: string) {
+function createData(id, name, surname) {
   return { id, name, surname };
 }
 
@@ -133,8 +133,8 @@ export default function ShowParticipants() {
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
   useEffect(() => {
-    csv("public/200people.csv").then((peopleData: any) => {
-      console.log(peopleData);
+    csv("public/200people.csv").then((peopleData) => {
+      // console.log(peopleData);
       setData(peopleData);
     });
   }, []);
@@ -167,7 +167,7 @@ export default function ShowParticipants() {
             {(rowsPerPage > 0
               ? data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               : data
-            ).map((row: any) => (
+            ).map((row) => (
               <TableRow key={row.Id}>
                 <TableCell component="th" scope="row">
                   {row.Id}
