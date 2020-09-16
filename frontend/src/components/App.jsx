@@ -1,38 +1,47 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import i18n from "../shared/i18n";
+import { useTranslation, Trans } from "react-i18next";
+
 import { Container } from "@material-ui/core";
+
 import AddPerson from "./AddPerson";
 import CalculatePairs from "./CalculatePairs";
 import PersonOnHold from "./PersonOnHold";
 import ShowParticipants from "./ShowParticipants";
 
+
 import "../styles/index.css";
 
-class App extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = { apiResponse: "" };
-  }
+export default function App() {
+  const { t, i18n } = useTranslation();
+  const [apiResponse, setApiResponse] = useState("")
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
 
-  callAPI() {
+  useEffect(() => {
+    callAPI()
+  }, [])
+  
+  function callAPI() {
     fetch("http://localhost:9000/testAPI/people")
       .then((res) => res.text())
-      .then((res) => this.setState({ apiResponse: res }));
+      .then((res) => setApiResponse(res));
   }
 
-  componentDidMount() {
-    this.callAPI();
-  }
-
-  render() {
-    return (
+  return (
       <Container className="container">
-        <p>{this.state.apiResponse}</p>
+        <button onClick={() => changeLanguage("en")}>en</button>
+        <button onClick={() => changeLanguage("fr")}>fr</button>
+        {/* <p>{apiResponse}</p> */}
         <div className="row">
           <AddPerson />
         </div>
         <hr />
         <div className="row my-4">
-          <CalculatePairs />
+          <Trans>
+            <CalculatePairs />
+          </Trans>
         </div>
         <hr />
         <div className="row my-4">
@@ -41,8 +50,5 @@ class App extends React.PureComponent {
         <hr />
         <ShowParticipants />
       </Container>
-    );
-  }
+  );
 }
-
-export default App;
